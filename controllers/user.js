@@ -42,3 +42,32 @@ exports.postSignUp = async(req,res,next)=>{
       res.status(500).json({message:'something went wrong'})
     }
 }
+
+exports.postLogin=async(req,res,next)=>{
+    try{
+    const{email,password}=req.body;
+    console.log(password)
+    if(isstringinvalid(email) || isstringinvalid(password)){
+       return res.status(401).json({message:'email or password is missing',success:false})
+    }
+    const user=await User.findAll({where:{email}})
+        if(user.length>0){
+            bcrypt.compare(password,user[0].password,(err,result)=>{
+                if(err){
+                    throw new Error('something went wrong')
+                }
+                if(result===true){
+                    res.status(200).json({success:true,message:'user logged in successfully',token:generateAccessToken(user[0].id,user[0].name)})
+                }else{
+                    return res.status(400).json({success:false,message:'Password Is Incorrect'})
+                }
+            })
+
+        }else{
+            return res.status(404).json({success:false,message:'User does not exist'})
+        }
+    
+   } catch{err=>{
+        res.status(500).json({message:err,success:false})
+    }}
+}
