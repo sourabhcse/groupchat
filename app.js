@@ -12,15 +12,33 @@ origin:"http://localhost:3500",
 credentials:true}))
 app.use(bodyParser.json());
 
-
+//routes
 const userRoutes=require('./routes/user')
+const chatRoutes=require('./routes/chat')
+const groupRoutes=require('./routes/group')
 
-
+//models
 const User=require('./models/users');
-
+const Chat=require('./models/chat');
+const Groupchat=require('./models/groupchat');
+const Group=require('./models/group');
+const Usergroup = require('./models/usergroup');
 
 
 app.use(userRoutes)
+app.use(chatRoutes)
+app.use(groupRoutes)
+
+//joins
+User.hasMany(Chat);
+Chat.belongsTo(User);
+
+
+User.hasMany(Groupchat);
+Groupchat.belongsTo(User)
+
+User.belongsToMany(Group,{through:Usergroup});
+Group.belongsToMany(User,{through:Usergroup});
 
 
 
