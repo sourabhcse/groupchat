@@ -1,0 +1,59 @@
+
+.container{
+    max-width:955px;
+    background-color: rgb(75, 144, 161);
+    margin:auto;
+    height: 50vh;
+    width:600px;
+   
+}
+h2{
+    background-color: white;
+    text-align: center;
+    color:rgb(226, 146, 121);
+    
+
+}
+form{
+    text-align: center;
+    display:block;
+
+}
+label{
+    display: block;
+    text-transform: uppercase;
+    color:white;
+}
+input{
+    width:50%;
+    color:green;
+    
+}
+
+.btn1{
+    width: 100px;
+    color:black;
+    background-color: white;
+    
+}
+.btn1:hover{
+    color:green;
+}
+.logo1{
+    width:50px;
+    display:inline-flex;
+    text-decoration: none;
+    text-align: none;
+    text-transform: none;
+    text-decoration-line: hidden;
+}
+ul{
+    text-align: center;
+
+}
+body{
+    text-align: center;
+    height:100vh;
+    /*background-image: linear-gradient(rgb(255,255,255),rgb(109,39,239));*/
+    background-color:beige;
+}

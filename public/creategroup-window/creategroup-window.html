@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./creategroup-window.css">
+</head>
+<body>
+    <nav>
+        
+        
+        <h2>Chat App</h2>
+        <h2>Create Group</h2>
+    </nav>
+    <div class="container">
+        <div>
+            <nav>
+            <button class="btn" id="one-to-one-chat">Private Chat</button>
+            <button class="btn" id="group-chat">Group Chat</button>
+            <button class="btn" id="create-group">Create Group</button>
+        </nav>
+        <div id="list-of-all-groups" >
+            <h4>list of all groups</h4>
+            <ul  id="created-group-show">
+
+
+            </ul>
+       
+        
+            <ul id="users-list">
+
+            </ul>
+        </div>
+        <div id="list-contcts">
+            <h4>list of all contacts</h4>
+            <ul id="list-of-all-contacts">
+
+            </ul>
+        </div>
+    </div>
+    <div>
+        <form id="create-container" onsubmit="createGroup(event)">
+            <h5>CREATE NEW GROUP</h5>
+            <label for="create-group-name-user">GROUP NAME:</label>
+            <input type="text" name="creategroup" id="create-group-name-user" placeholder="Enter GROUP NAME">
+            <button class="btn btn-primary" type="submit" >Create Group</button>
+       </form>
+       <form id="create-group-user" onsubmit="addUserToGroup(event)">
+        <h5>Add user to Group</h5>
+        <div>
+            <label for="create-group-name-user">GROUP NAME:</label>
+            <input type="text" name="grpname" placeholder="Enter group name" />
+            <label for="create-group-name-user-email">Email:</label>
+            <input type="email" name="email" placeholder="Email In contact">
+            <div>
+                <input type="radio" id="admin-yes" name="admin" />
+                <label for="admin-yes">Admin</label>
+            </div>
+            <div>
+                <input type="radio" id="admin-no" name="admin" checked />
+                <label for="admin-no">Not Admin</label>
+            </div>
+        </div>
+        <button class="btn"type="submit">Add User To Group</button>
+    </form>
+    <form id="remover-user" onsubmit="removeUser(event)">
+        <h5>Remove user from the group</h5>
+        <div>
+            <label for="remove-group-user">GROUP NAME:</label>
+            <input type="text" id="remove-group-user" name="removeName" placeholder="Enter Group Name" />
+            <label for="remove-email">Email:</label>
+            <input type="email" id="remove-email" name="removeEmail" placeholder="email" />
+        </div>
+        <button class="btn" type="submit">Remove User from the group</button>
+    </form>
+    </div>
+    <div class="card-header" id="message-card-header">
+                  <!-- Message to : <span></span> -->
+                </div>
+    <ul id="chat-messages">
+
+    </ul>
+    <div id="toast-msg"></div>
+    
+
+    </div>
+    <div class="send">
+        <form id="send-container" onsubmit="chat(event)">
+             <input type="text" name="chat2" id="messageinp" placeholder="Enter Message">
+             <button class="btn" type="submit" >Send</button>
+        </form>
+ 
+    </div>
+    <script src="./creategroup-window.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>

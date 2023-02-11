@@ -1,0 +1,59 @@
+
+
+.container{
+    max-width:955px;
+    background-color:rgb(87, 145, 172);
+    margin:auto;
+    height: 40vh;
+    width:600px;
+   
+}
+h2{
+    background-color: white;
+    text-align: center;
+    color:rgb(184, 80, 39);
+    
+
+}
+form{
+    text-align: center;
+    display:block;
+
+}
+label{
+    display: block;
+    text-transform: uppercase;
+    color:white;
+}
+input{
+    width:50%;
+    color:green;
+    
+}
+
+.btn1{
+    width: 100px;
+    color:black;
+    background-color: white;
+    
+}
+.btn1:hover{
+    color:green;
+}
+.logo1{
+    width:50px;
+    display:inline-flex;
+    text-decoration: none;
+    text-align: none;
+    text-transform: none;
+    text-decoration-line: hidden;
+}
+ul{
+    text-align: center;
+
+}
+body{
+    text-align: center;
+    height:100vh;
+    background-color: aliceblue;
+}

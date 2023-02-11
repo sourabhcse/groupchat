@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./group-window.css">
+</head>
+<body>
+    <nav>
+        
+        
+        <h2>Chat App</h2>
+        <h2>Group Chat</h2>
+    </nav>
+    <div class="container">
+        <div>
+            <nav>
+            <button class="btn" id="one-to-one-chat">Private Chat</button>
+            <button class="btn" id="group-chat">Group Chat</button>
+            <button class="btn" id="create-group">Create Group</button>
+        </nav>
+        <div >
+            <ul  id="left">
+
+
+            </ul>
+       
+        
+            <ul id="users-list">
+
+            </ul>
+        </div>
+    </div>
+    <div class="card-header" id="message-card-header">
+                  
+                </div>
+    <ul id="chat-messages">
+
+    </ul>
+    <div id="toast-msg"></div>
+        
+    </div>
+    <div class="send">
+        <form id="send-container" onsubmit="chat(event)">
+             <input type="text" name="group2" id="messageinp" placeholder="Enter Message">
+             <button class="btn" type="submit" >Send</button>
+        </form>
+    </div>
+    <script src="./group-window.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js" integrity="sha512-QTnb9BQkG4fBYIt9JGvYmxPpd6TBeKp6lsUrtiVQsrJ9sb33Bn9s0wMQO9qVBFbPX3xHRAsBHvXlcsrnJjExjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
